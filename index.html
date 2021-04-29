@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Development Area</title>
+	<!-- ALL CSS FILES  -->
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/css/style.css">
+	<link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+
+<body class="bg-dark">
+
+
+
+
+	
+	<div class="row section">
+		<div class="col-3 editor bg-light">
+			
+	
+			<div class="container ">
+				<!-- input fild -->
+				<div class="form-group mt-4">
+					<label for="header">Title</label>
+					<input v-model="title" type="text" class="form-control">
+				</div>
+				<div class="form-group">
+					<label for="texta">Contain</label>
+					<textarea v-model="content" class="form-control" name="" id="texta" cols="30" rows="10"></textarea>
+				</div>
+	
+				<!-- text Telegraphy -->
+				<label for="">Telegraphy</label>
+				<hr>
+				<div class="form-group">
+					<div class="row" id="Telegraphy">
+						<div class="col-4">
+							<label for="vol">Fornt size ({{ font.size }})</label>
+							<input	v-model='font.size' type="range" id="vol" min="0" max="50">
+						</div>
+						<div class="col-4">
+							<label for="vol">Margin ({{ font.mergin }})</label>
+							<input v-model='font.mergin'	 type="range" id="vol" min="0" max="50">
+						</div>
+						<div class="col-4">
+							<label for="vol">Pading ({{ font.padding }})</label>
+							<input v-model='font.padding'	 type="range" id="vol" min="0" max="50">
+						</div>
+						<div class="col-4">
+							<label for="favcolor">Text color</label><br>
+							<input v-model='font.color' type="color" class="form-control" id="favcolor" name="favcolor" value="#ff0000">
+						</div>
+						<div class="col-4">
+							<label for="alinment">Text Alignment</label>
+							<select class="form-control" name="cars" id="alinment">
+								<option value="volvo">Volvo</option>
+								<option value="saab">Saab</option>
+								<option value="opel">Opel</option>
+								<option value="audi">Audi</option>
+							  </select>
+						</div>
+						<div class="col-4">
+							<label for="alinment">Text Font</label>
+							<select class="form-control" name="cars" id="alinment">
+								<option value="volvo">Volvo</option>
+								<option value="saab">Saab</option>
+								<option value="opel">Opel</option>
+								<option value="audi">Audi</option>
+							  </select>
+						</div>
+					</div>
+					
+				</div>
+				<!-- button coustomization  -->
+				<label for="">Button</label>
+				<hr>
+				<div class="form-group">
+					<div class="row">
+						<div class="col-5">
+							<label for="text">Button text</label>
+							<input v-model='btn.title' id="text" type="text" class="form-control">
+						</div>
+						<div class="col-4">
+							<label for="color">Button color</label>
+							<select v-model='btn.color' class="form-control" name="cars" id="color">
+								<option value="primary">Primary</option>
+								<option value="secondary">Secondary</option>
+								<option value="success">Success</option>
+								<option value="danger">Danger</option>
+								<option value="warning">Warning</option>
+								<option value="info">Info</option>
+								<option value="light">Light</option>
+								<option value="dark">Dark</option>
+	
+							  </select>
+						</div>
+						<div class="col-3">
+							<label for="vehicle1">Out Line</label><br>
+							<input v-model='btn.outline' type="checkbox" id="vehicle1"  value="outline">
+						</div>
+						</div>
+				</div>
+				
+				
+	
+			</div>
+	
+		</div>
+		<div class="col-9 section">
+			<div class="card text-white bg-primary mb-3 mr-5 ml-5 mt-5">
+				<h3 class="card-header">{{ title }}</h3>
+				<div class="card-body">
+				  
+				  <p class="card-text" :style="'font-size:'+font.size+'px;'+'margin:'+font.mergin+'px;'+'padding:'+font.padding+'px;'">{{ content }}</p>
+				  <button  v-if="btn.outline"  :class="'btn btn-'+'outline'+btn.color">{{ title }}</button >
+				  <a v-else-if="!btn.outline" href="" :class="'btn btn-'+btn.color">{{ btn.title }}</a>
+				</div>
+		</div>
+	</div>
+
+
+
+
+
+
+
+
+
+
+	<!-- JS FILES  -->
+	<script src="assets/js/jquery-3.4.1.min.js"></script>
+	<script src="assets/js/popper.min.js"></script>
+	<script src="assets/js/bootstrap.min.js"></script>
+
+	<!-- Vue JS Load  -->
+	<script src="assets/js/vue.js"></script>
+	<script src="assets/js/vue-router.js"></script>
+	<script src="assets/js/custome_script.js"></script>
+	
+
+</body>
+
+</html>
